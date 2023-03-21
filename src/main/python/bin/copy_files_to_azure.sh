@@ -31,8 +31,8 @@ LOCAL_CITY_DIR=${LOCAL_OUTPUT_PATH}/dimension_city
 LOCAL_FACT_DIR=${LOCAL_OUTPUT_PATH}/presc
 
 ### Define SAS URLs
-citySasUrl="https://prescriberanalytics.blob.core.windows.net/dimension-city/${bucket_subdir_name}?st=2023-03-02T04:20:49Z&se=2023-03-02T12:20:49Z&si=cwlaccess&spr=https&sv=2021-06-08&sr=c&sig=yMuS7Cfu8jDLCUW88kTHd4x%2F2R%2FwDyLZYHa85%2FPV898%3D"
-prescSasUrl="https://prescriberanalytics.blob.core.windows.net/presc/${bucket_subdir_name}?st=2023-03-02T04:23:02Z&se=2023-03-02T12:23:02Z&si=cwlaccess&spr=https&sv=2021-06-08&sr=c&sig=4n%2BWsEz%2FzrmY43d3PQrBkG0fYhbwKye0rSv0QdNLf50%3D"
+citySasUrl="https://prescriberanalytics.blob.core.windows.net/dimension-city/${bucket_subdir_name}?st=${city_key}"
+prescSasUrl="https://prescriberanalytics.blob.core.windows.net/presc/${bucket_subdir_name}?st=${city_key}"
 
 ### Push City  and Fact files to Azure.
 azcopy copy "${LOCAL_CITY_DIR}/*" "$citySasUrl"
